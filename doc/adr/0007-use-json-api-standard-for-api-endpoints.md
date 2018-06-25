@@ -19,8 +19,12 @@ also reduced.
 
 ## Decision
 
-We will use the (http://jsonapi.org/)[JSON API] when defining our API endpoints.
+We will use the [JSON API][JSON-API] when defining our API endpoints.
 
 ## Consequences
 
 None
+
+
+[adr-0002]: 0002-overall-technical-approach.md
+[JSON-API]: http://jsonapi.org/

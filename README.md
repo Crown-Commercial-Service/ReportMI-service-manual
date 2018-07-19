@@ -7,3 +7,8 @@
 * [5. Use docker for applications](doc/adr/0005-use-docker-for-applications.md)
 * [6. Use Terraform to create and document infrastructure](doc/adr/0006-use-terraform-to-create-and-document-infrastructure.md)
 * [7. Use JSON API standard for API endpoints](doc/adr/0007-use-json-api-standard-for-api-endpoints.md)
+
+See also:
+
+* [Proposed architecture decisions](https://github.com/Crown-Commercial-Service/DataSubmissionService-ADRs/pulls)
+* [Cross-CCS Architecture Decision Records](https://github.com/Crown-Commercial-Service/CCS-Architecture-Decision-Records)

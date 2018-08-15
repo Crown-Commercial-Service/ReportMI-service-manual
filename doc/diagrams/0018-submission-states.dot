@@ -1,0 +1,18 @@
+digraph {
+  rankdir = LR;
+  "Submission with data" [color="blue" fontcolor="blue"];
+  "No business submission" [color="blue" fontcolor="blue"];
+  "pending" [shape=box];
+  "processing" [shape=box];
+  "validation_passed" [shape=box];
+  "validation_failed" [shape=box];
+  "supplier_rejected" [shape=box];
+  "supplier_accepted" [shape=box];
+  "pending" -> "processing";
+  "processing" -> "validation_passed";
+  "processing" -> "validation_failed";
+  "validation_passed" -> "supplier_accepted";
+  "validation_passed" -> "supplier_rejected";
+  "Submission with data" -> "pending" [color="blue"];
+  "No business submission" -> "supplier_accepted" [color="blue"];
+}

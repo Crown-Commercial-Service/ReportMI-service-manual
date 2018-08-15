@@ -15,16 +15,18 @@ Tasks will exist in a state machine that outlines what is happening with them.
 
 Currently, we expect there to be 3 states:
 
-* **Unstarted** - must be completed, but there has not been any interaction yet
-* **In progress** - there is something happening with this task at the moment
+* **unstarted** - must be completed, but there has not been any interaction yet
+* **in_progress** - there is something happening with this task at the moment
 (eg a supplier has started a submission)
-* **Complete** - there is nothing further to do on this task
+* **completed** - there is nothing further to do on this task
 
 ## Decision
 
 The system will model the 3 tasks highlighted above.
 
-Tasks will proceed through the state machine in the following way:
+Tasks will proceed through the states from `unstarted` to `in_progress` to
+`completed`, as shown in the following diagram.
+
 ![Task state machine diagram](/doc/diagrams/0017-task-states.jpg)
 
 ## Consequences

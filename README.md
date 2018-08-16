@@ -14,6 +14,10 @@
 * [12. Use ECS for hosting applications](doc/adr/0012-use-ecs-for-hosting-applications.md)
 * [13. Use AWS S3 for storing files](doc/adr/0013-use-s3-for-storing-files.md)
 * [14. Use GOV.UK Notify for sending notifications](doc/adr/0014-use-gov-uk-notify-for-sending-notifications.md)
+* [15. **DRAFT** Lambda for file ingest and validation](https://github.com/Crown-Commercial-Service/DataSubmissionService-ADRs/pull/10)
+* [16. Data structure (tasks, submissions, entries and files)](doc/adr/0016-data-structure-tasks-submissions-entries-and-files.md)
+* [17. Task state machine](doc/adr/0017-task-state-machine.md)
+* [18. Submission state machine](doc/adr/0018-submission-state-machine.md)
 
 See also:
 

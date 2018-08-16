@@ -1,0 +1,8 @@
+digraph {
+	rankdir = LR;
+	"unstarted" [shape=box];
+	"in_progress" [shape=box];
+	"completed" [shape=box];
+	"unstarted" -> "in_progress";
+	"in_progress" -> "completed";
+}

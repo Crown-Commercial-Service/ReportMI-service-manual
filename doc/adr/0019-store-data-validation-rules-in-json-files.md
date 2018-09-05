@@ -19,13 +19,25 @@ A separate copy of these rules is configured for each framework in MISO, which
 the service uses to validate templates have been filed in correctly when
 uploaded.
 
-In future, we want a single source for the rules, which we can use to
-automatically generate templates in various formats (including Excel) and to
-validate submitted returns.
+### Longer term approach
+
+In future, we want a single source for the rules for framework data submissions
+which we can use for various tasks including:
+- generating submission templates in different formats (eg Excel, ODS, CSV)
+- validating submitted returns
+- documenting any APIs
 
 These rules should ideally be stored in a central place and made available to
-services which require them via an API. They also need to be version controlled
-so they can be changed during the lifetime of a framework.
+any services which require them via an API. This will allow new services to
+share the ruleset and description.
+
+The high-level principle is that there should be an artefact that describes the
+rules that need to be applied.
+
+The artefacts need to be version controlled so they can be changed during the
+lifetime of the framework. Services may need to access and used outdated
+versions of the rules.
+
 
 ### Interim approach
 
@@ -39,6 +51,8 @@ We will create a JSON file for each framework which outlines the data structure
 required and the validation rules for each field. This JSON file will be stored
 in a GitHub repository, and used to generate templates and validate submitted
 files.
+
+Eventually, we will develop an API to provide access to this information.
 
 ## Decision
 

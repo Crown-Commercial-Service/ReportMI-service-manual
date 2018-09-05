@@ -50,6 +50,8 @@ This is shown in the following diagram.
 
 We will need to model submissions to have this state machine.
 
-This will impact exports to the Data Warehouse.
+This will impact exports to the Data Warehouse as these states differ to that of
+MISO. The warehouse will have to be updated to handle these states and the
+import process changed. This will be covered in more detail in a future ADR.
 
 [adr-0016]: 0016-data-structure-tasks-submissions-entries-and-files.md

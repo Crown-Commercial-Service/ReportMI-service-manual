@@ -51,7 +51,7 @@ Developing these services to be hosted as a serverless function would allow us,
 in theory, to infinitely scale the file ingest and validation parts of the
 service and only pay for what is actually needed.
 
-Each of the main cloud providers has their own implentation of a Serverless
+Each of the main cloud providers has their own implementation of a serverless
 hosting option including Azure Functions, Google Cloud Functions and AWS Lambda.
 
 ## Decision

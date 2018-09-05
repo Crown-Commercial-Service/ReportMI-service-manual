@@ -4,6 +4,10 @@ Date: 2018-08-15
 
 ## Status
 
+Proposed
+
+## Context
+
 As outlined in [ADR-0016][adr-0016], the Data Submission Service will use
 "submissions" to describe something that a supplier has submitted to us in order
 to complete a "task".

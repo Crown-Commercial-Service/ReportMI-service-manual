@@ -67,9 +67,9 @@ In that ADR, we suggested that the data exports (including the finance export)
 would be standalone components within the overall system.
 
 After discussion with the team, we believe the correct approach for the Coda
-export is to generate as a report in Ruby using the API application. This will
-reduce the effort required to generate a separate component for a service that
-will be decomissioned in a few months time.
+export is to generate it as a report in Ruby using the API application. This
+will reduce the effort required to generate a separate component for a service
+that will be decommissioned in a few months time.
 
 ## Decision
 

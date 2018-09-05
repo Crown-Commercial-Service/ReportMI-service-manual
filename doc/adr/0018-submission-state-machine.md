@@ -30,6 +30,9 @@ processing and has rejected it (eg they have realised that their data needs to
 * **supplier_accepted** - the supplier has reviewed the result of the data
 processing and are happy that it is accurate
 
+Other states may added in future to cover approval processes, and fixing
+mistakes in returns.
+
 ## Decision
 
 The system will model the 6 states highlighted above.

@@ -4,7 +4,7 @@ Date: 2018-06-11
 
 ## Status
 
-Proposed
+Accepted
 
 ## Context
 
@@ -24,7 +24,7 @@ allow us to use a Platform as a Service offering.
 In [ADR-0006][adr-0006] we decided to use Terraform to create and document our
 cloud based Infrastructure.
 
-Terrform supports building infrastructure in AWS, and AWS provides several
+Terraform supports building infrastructure in AWS, and AWS provides several
 Platform as a Service offerings for applications in Docker containers (Elastic
 Beanstalk and Elastic Container Service).
 

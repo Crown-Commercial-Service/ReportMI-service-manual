@@ -4,7 +4,7 @@ Date: 2018-08-15
 
 ## Status
 
-Proposed
+Accepted
 
 ## Context
 
@@ -33,6 +33,9 @@ Tasks will proceed through the states from `unstarted` to `in_progress` to
 
 We will need to model tasks to have this state machine.
 
-This will impact exports to the Data Warehouse.
+This will impact exports to the Data Warehouse because the concept of tasks
+doesn't currently exist there. It will have to be modelled and the import
+process updated to reflect the change. This will be covered in more detail in a
+future ADR.
 
 [adr-0016]: 0016-data-structure-tasks-submissions-entries-and-files.md

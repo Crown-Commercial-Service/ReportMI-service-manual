@@ -4,7 +4,7 @@ Date: 2018-07-18
 
 ## Status
 
-Proposed
+Accepted
 
 ## Context
 
@@ -71,6 +71,9 @@ and also configure the AWS RDS PostgreSQL instance to support our needs.
 
 We will need to review this decision as we add more suppliers and frameworks to
 the service to ensure we're using the right database product and type.
+
+We will need to work with the CCS operations team to ensure they understand how
+management of this database will operate in future.
 
 [adr-0002]: 0002-overall-technical-approach.md
 [adr-0004]: 0004-use-ruby-on-rails-for-applications.md

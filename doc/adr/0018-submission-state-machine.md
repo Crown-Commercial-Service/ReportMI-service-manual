@@ -4,6 +4,10 @@ Date: 2018-08-15
 
 ## Status
 
+Proposed
+
+## Context
+
 As outlined in [ADR-0016][adr-0016], the Data Submission Service will use
 "submissions" to describe something that a supplier has submitted to us in order
 to complete a "task".
@@ -26,6 +30,9 @@ processing and has rejected it (eg they have realised that their data needs to
 * **supplier_accepted** - the supplier has reviewed the result of the data
 processing and are happy that it is accurate
 
+Other states may added in future to cover approval processes, and fixing
+mistakes in returns.
+
 ## Decision
 
 The system will model the 6 states highlighted above.
@@ -46,6 +53,8 @@ This is shown in the following diagram.
 
 We will need to model submissions to have this state machine.
 
-This will impact exports to the Data Warehouse.
+This will impact exports to the Data Warehouse as these states differ to that of
+MISO. The warehouse will have to be updated to handle these states and the
+import process changed. This will be covered in more detail in a future ADR.
 
 [adr-0016]: 0016-data-structure-tasks-submissions-entries-and-files.md

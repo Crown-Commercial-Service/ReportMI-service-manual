@@ -1,4 +1,6 @@
-# Report Management Information - Architectural Decision Records
+# Report Management Information
+
+## Architectural Decision Records
 
 * [1. Record architecture decisions](doc/adr/0001-record-architecture-decisions.md)
 * [2. Overall technical approach](doc/adr/0002-overall-technical-approach.md)
@@ -19,6 +21,10 @@
 * [17. Task state machine](doc/adr/0017-task-state-machine.md)
 * [18. Submission state machine](doc/adr/0018-submission-state-machine.md)
 
+## Product Decision Records
+
+- [1. Record product decisions](doc/pdr/0001-record-product-decisions.md)
+- [2. Maintain corrections process consistent with MISO](0002-maintain-corrections-process.md)
 See also:
 
 * [Proposed architecture decisions](https://github.com/Crown-Commercial-Service/DataSubmissionService-ADRs/pulls)

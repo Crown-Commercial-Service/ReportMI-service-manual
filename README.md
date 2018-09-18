@@ -16,16 +16,21 @@
 * [12. Use ECS for hosting applications](doc/adr/0012-use-ecs-for-hosting-applications.md)
 * [13. Use AWS S3 for storing files](doc/adr/0013-use-s3-for-storing-files.md)
 * [14. Use GOV.UK Notify for sending notifications](doc/adr/0014-use-gov-uk-notify-for-sending-notifications.md)
-* [15. **DRAFT** Lambda for file ingest and validation](https://github.com/Crown-Commercial-Service/DataSubmissionService-ADRs/pull/10)
+* [15. Lambda for file ingest and validation](doc/adr/0015-use-lambda-for-file-ingest-and-data-validation.md)
 * [16. Data structure (tasks, submissions, entries and files)](doc/adr/0016-data-structure-tasks-submissions-entries-and-files.md)
 * [17. Task state machine](doc/adr/0017-task-state-machine.md)
 * [18. Submission state machine](doc/adr/0018-submission-state-machine.md)
+* [19. Store data validation rules in JSON files](doc/adr/0019-store-data-validation-rules-in-json-files.md)
+* [20. Name the service and domain](doc/adr/0020-name-the-service-and-domain.md)
+* [21. Generate a data export for finance](doc/adr/0021-generate-a-data-export-for-finance.md)
+* [22. Use Auth0 for access management at scale](doc/adr/0022-use-auth0-for-access-management-at-scale.md)
 
 ## Product Decision Records
 
 - [1. Record product decisions](doc/pdr/0001-record-product-decisions.md)
-- [2. Maintain corrections process consistent with MISO](0002-maintain-corrections-process.md)
-See also:
+- [2. Maintain corrections process consistent with MISO](doc/pdr/0002-maintain-corrections-process.md)
 
-* [Proposed architecture decisions](https://github.com/Crown-Commercial-Service/DataSubmissionService-ADRs/pulls)
+## See also:
+
+* [Proposed decisions](https://github.com/Crown-Commercial-Service/ReportMI-ADRs/pulls)
 * [Cross-CCS Architecture Decision Records](https://github.com/Crown-Commercial-Service/CCS-Architecture-Decision-Records)

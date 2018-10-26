@@ -19,7 +19,7 @@ The Report MI team and those supporting the operation of the service will not ma
 
 Suppliers should be the only ones to make changes to the data they are returning to CCS about their business. 
 
-This follows a principle of supporting and enforcing suppliers' accountability for submitting accurate returns, as outlined in **[link to PDR about no proxy returns]**
+This follows a principle of supporting and enforcing suppliers' accountability for submitting accurate returns, as outlined in [PDR-0005 Returns must always be filed by suppliers](https://github.com/Crown-Commercial-Service/ReportMI-ADRs/blob/master/doc/pdr/0005-returns-must-always-be-filed-by-suppliers.md)
 
 
 ## Consequences

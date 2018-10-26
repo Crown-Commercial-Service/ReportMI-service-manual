@@ -1,4 +1,4 @@
-# 1. Ignore 'Bids' tabs 
+# 3. Ignore 'Bids' tabs 
 
 Date: 2018-10-24
 

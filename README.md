@@ -29,6 +29,9 @@
 
 - [1. Record product decisions](doc/pdr/0001-record-product-decisions.md)
 - [2. Maintain corrections process consistent with MISO](doc/pdr/0002-maintain-corrections-process.md)
+- [3. Ignore bids tab](doc/pdr/0003-ignore-bids-tab.md)
+- [4. Suppliers hold the version of record for their returns](doc/pdr/0004-suppliers-hold-version-of-record-for-returns.md)
+- [5. Returns must always be filed by suppliers](doc/pdr/0005-returns-must-always-be-filed-by-suppliers.md)
 
 ## See also:
 

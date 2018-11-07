@@ -24,6 +24,9 @@
 * [20. Name the service and domain](doc/adr/0020-name-the-service-and-domain.md)
 * [21. Generate a data export for finance](doc/adr/0021-generate-a-data-export-for-finance.md)
 * [22. Use Auth0 for access management at scale](doc/adr/0022-use-auth0-for-access-management-at-scale.md)
+* [23. Workday integration principles](doc/adr/0023-workday-integration-principles.md)
+* PROPOSED: [24. Use Workday API to manage invoicing](blob/acd3f3a528fa1e9ebb83df64fb36021d05d6bff5/doc/adr/0024-use-workday-api-to-manage-invoicing.md)
+* PROPOSED: [25. Submit invoices to Workday asynchronously](blob/acd3f3a528fa1e9ebb83df64fb36021d05d6bff5/doc/adr/0025-submit-invoices-to-workday-asyncronously.md)
 
 ## Product Decision Records
 

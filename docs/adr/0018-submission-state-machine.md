@@ -47,7 +47,7 @@ the supplier has confirmed they wish to make this submission.
 
 This is shown in the following diagram.
 
-![Submission state machine diagram](/doc/diagrams/0018-submission-states.jpg)
+![Submission state machine diagram](../diagrams/0018-submission-states.jpg)
 
 ## Consequences
 

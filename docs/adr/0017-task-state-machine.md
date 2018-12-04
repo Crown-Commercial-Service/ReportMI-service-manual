@@ -27,7 +27,7 @@ The system will model the 3 tasks highlighted above.
 Tasks will proceed through the states from `unstarted` to `in_progress` to
 `completed`, as shown in the following diagram.
 
-![Task state machine diagram](/doc/diagrams/0017-task-states.jpg)
+![Task state machine diagram](../diagrams/0017-task-states.jpg)
 
 ## Consequences
 

@@ -19,3 +19,11 @@ This term was previously known as a 'nil return'.
 ## CCS user
 
 ## Validation
+
+## Commercial Agreement
+AKA framework
+
+## Template 
+
+## Management charge
+AKA levy

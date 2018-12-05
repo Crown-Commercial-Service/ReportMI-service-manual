@@ -34,6 +34,7 @@
 - [3. Ignore bids tab]( pdr/0003-ignore-bids-tab.md)
 - [4. Suppliers hold the version of record for their returns]( pdr/0004-suppliers-hold-version-of-record-for-returns.md)
 - [5. Returns must always be filed by suppliers]( pdr/0005-returns-must-always-be-filed-by-suppliers.md)
+- [6. Don't validate customer postcode field] ( pdr/0006-don't-validate-customer-postcode-field.md)
 
 ## See also
 

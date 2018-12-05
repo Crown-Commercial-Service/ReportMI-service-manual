@@ -1,4 +1,4 @@
-# 5. Don't validate customer postcode field
+# 6. Don't validate customer postcode field
 
 ## Status
 

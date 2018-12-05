@@ -27,3 +27,6 @@ AKA framework
 
 ## Management charge
 AKA levy
+
+## Postcode
+Always written as a single word.

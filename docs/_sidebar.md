@@ -1,6 +1,6 @@
 
 * [About the Service](README.md)
-* [Language](language.md)
+* [Glossary](glossary.md)
 * [Users](users.md)
 * [Submissions](submissions.md)
 * [Validations](validations.md)

@@ -41,7 +41,7 @@ the thing a supplier needs to do to complete their obligation _(formerly known a
 the month that the data refers to – always show both month and date together e.g. “your December return that you reported in January” _(formerly known as ‘activity’, ‘business month’, ‘for month’)_
 
 ## return
-The information a supplier reports to CCS every month – information is the value of contracts won and/or the value of work done in a particular month _(formerly known as 'file', 'a report', 'submission', ‘template’)_
+The information a supplier reports to CCS every month – information is the value of contracts won and/or the value of work done in a particular month _(formerly known as 'task', 'file', 'report', 'submission', ‘template’)_
 
 ## Report MI
 name of the service when shortened

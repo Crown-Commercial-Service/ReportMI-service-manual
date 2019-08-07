@@ -1,5 +1,6 @@
 
 * [About the Service](README.md)
+* [Onboarding](onboarding.md)
 * [Glossary](glossary.md)
 * [Users](users.md)
 * [Submissions](submissions.md)

@@ -33,3 +33,16 @@ Start a Rails console
 $ /tmp/lifecycle/shell
 $ bin/rails console
 ```
+
+## Viewing environment variables
+
+The [GOV.UK PaaS documentation for viewing the current value for variables](https://docs.cloud.service.gov.uk/deploying_apps.html#environment-variables) can be used.
+
+For example you can view staging variables by:
+
+```
+cf login -a api.london.cloud.service.gov.uk -u <YOUR_EMAIL_ADDRESS>
+cf target -s staging
+cf v3-apps
+cf env APP_NAME
+```

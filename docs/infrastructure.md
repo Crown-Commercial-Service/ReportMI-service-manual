@@ -46,3 +46,62 @@ cf target -s staging
 cf v3-apps
 cf env APP_NAME
 ```
+
+## Change an environment variable
+
+We use [user provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to manage environment variables on the PaaS, this is different to the [default documentation](https://docs.cloud.service.gov.uk/deploying_apps.html#environment-variables). This decision was taken as TODO: fill out.
+
+### Prerequisites
+
+#### Secrets
+
+Environment variables are managed through 2 files in 1Password:
+
+- DSS .env.cf.prod
+- DSS .env.cf.staging
+
+Both the frontend and the API have environment variables managed through the same file.
+
+#### Scripts
+
+The scripts that help us make these changes are found in the [frontend repository within the CF directory](https://github.com/dxw/DataSubmissionService/tree/develop/CF). You should have this repository and directory checked out to continue.
+
+#### JSON Parser
+
+```
+brew install jq
+```
+
+### Making a change
+
+1. Make a change to the file in 1Password
+2. Copy the contents into a new local file `DataSubmissionService/CF/.env.cf.staging`
+3. Run the script to apply the changes `./create-user-services.sh -u <YOUR_PAAS_EMAIL_ADDRESS> -p <YOUR_PAAS_PASSWORD> -o ccs-report-management-info -s staging`
+
+### Verify the change
+
+```
+cf v3-apps
+cf v3-env <APP_NAME>
+```
+
+### Deploy the change
+
+Using V3 instead of the previous blue/green plugin allows us to execute deployments without any downtime to the user natively.
+
+ZDT = Zero downtime deploy
+
+```
+cf v3-apps
+cf v3-zdt-restart <APP_NAME>
+```
+
+### Watch the deployment progress
+
+You should see the process count for the intended application change as new processes are spun up and handed over to. This can take a few minutes.
+
+```
+watch cf v3-apps
+```
+
+Once this is complete the containers should be running the new environment variables.

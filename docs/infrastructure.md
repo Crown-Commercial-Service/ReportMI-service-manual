@@ -105,3 +105,12 @@ watch cf v3-apps
 ```
 
 Once this is complete the containers should be running the new environment variables.
+
+## Restart an application
+
+Redeploy an application from v3-apps with downtime
+
+```
+cf v3-apps
+cf restage <APP_NAME>
+```

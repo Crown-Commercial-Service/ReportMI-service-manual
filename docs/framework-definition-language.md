@@ -429,6 +429,50 @@ The lookups of the dependent fields can be named anything (but they should not
 be the names of data warehouse fields) - the important thing to remember is that
 the name of the lookup and the name in the `depends_on` mappings MUST match.
 
+The `depends_on` keyword MAY be followed by multiple template origin names,
+indicating that the dependent field depends on the values of more than one other
+field. The names of the template origin fields should be given as a
+comma-separated list, for example:
+
+    InvoiceFields {
+      ProductGroup from 'Service Type'
+      ProductValue from 'Service Value'
+      ProductDescription from 'Primary Specialism' depends_on 'Service Type', 'Service Value' {
+        ...
+      }
+    }
+
+When using multiple template origin names, the dependent field mappings must
+have a corresponding number of values on the left of each arrow, for example:
+
+    InvoiceFields {
+      ProductGroup from 'Service Type'
+      ProductValue from 'Service Value'
+      ProductDescription from 'Primary Specialism' depends_on 'Service Type', 'Service Value' {
+        'Core', '10',    -> CoreSpecialisms
+        'Non-core', '20' -> NonCoreSpecialisms
+        'Mixture', '50'  -> PrimarySpecialisms
+      }
+    }
+
+
+This indicates that if `Service Type` has the value `Core` _and_ `Service Value`
+has the value `10`, then `Primary Specialism` can take values from
+`CoreSpecialisms`, and so on for the other mappings.
+
+Each clause of the mapping MUST have the same number of values on the left of
+the arrow, as there are field names following the `depends_on` keyword.
+
+A wildcard match (`*`) may be used in place of any value on the left of the
+arrows, to match any value of the corresponding field. For example, to provide a
+lookup for the case when `Service Value` has the value `60`, and `Service Type`
+has any value:
+
+      ProductDescription from 'Primary Specialism' depends_on 'Service Type', 'Service Value' {
+        ...
+        *, '60' -> SixtySpecialisms
+      }
+
 ### Real-world examples
 
 #### Laundry Services - Wave 2 (CM/OSG/05/3565) - a framework with only InvoiceFields and no Lookups.

@@ -8,3 +8,4 @@
 * [Data Warehouse Export](data-warehouse-export.md)
 * [Decision Records](decision-records.md)
 * [Infrastructure](infrastructure.md)
+* [Deployments](deployments.md)

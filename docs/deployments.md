@@ -1,5 +1,7 @@
 # Release process
 
+The platform is currently hosted on the Government Platform as a Service (GPaaS).
+
 ## Migrations
 
 Migrations are manual.

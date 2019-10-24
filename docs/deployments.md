@@ -1,5 +1,14 @@
 # Release process
 
+## Migrations
+
+Migrations are manual.
+
+1. [get access to a rails console on the box](/docs/infrastructure)
+1. run `bin/rails db:migrate`
+1. run `cf v3-zdt-restart ccs-rmi-api-staging` for these changes to take affect
+
+Because this is manual it is important that all migrations are backwards compatible.
 As outlined in the [dxw development workflow guide], production deploys are
 done by manually merging `develop` into `master`. To give us a slightly more
 formal process around what gets deployed and when and also to give us

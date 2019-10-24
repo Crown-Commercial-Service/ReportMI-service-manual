@@ -2,6 +2,8 @@
 
 The platform is currently hosted on the Government Platform as a Service (GPaaS).
 
+Cloud Foundary scripts exist within each application in the /CF directory. These scripts are responsible for infrastructure changes as a separate task.
+
 ## Migrations
 
 Migrations are manual.

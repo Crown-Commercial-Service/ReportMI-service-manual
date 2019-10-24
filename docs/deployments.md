@@ -8,13 +8,20 @@ Migrations are manual.
 1. run `bin/rails db:migrate`
 1. run `cf v3-zdt-restart ccs-rmi-api-staging` for these changes to take effect
 
+## Staging
+
+Deployments to staging are automatic when new changes are pushed via
+pull request to the develop branch.
+
+## Production
+
 As outlined in the [dxw development workflow guide], production deploys are
 done by manually merging `develop` into `master`. To give us a slightly more
 formal process around what gets deployed and when and also to give us
 visibility into the things that have been deployed, we additionally follow
 these steps when releasing to production:
 
-## 1. Create a release branch and make a pull request
+### 1. Create a release branch and make a pull request
 
   - Create a branch from `develop` for the release called `release-X` where X is the release
     number
@@ -27,13 +34,13 @@ these steps when releasing to production:
   - Create a pull request for the release with content from the `CHANGELOG.md`
   - Get that pull request reviewed and approved
 
-## 2. Review and merge the release pull request
+### 2. Review and merge the release pull request
 
 The pull request should be reviewed to confirm that the changes in the release
 are safe to ship and that CHANGELOG.md accurately reflects the changes
 included in the release.
 
-## 3. Confirm the release candidate and perform any prerequisites
+### 3. Confirm the release candidate and perform any prerequisites
 
   - Confirm the release with any relevant people (product owner, delivery
     manager, etc)
@@ -41,7 +48,7 @@ included in the release.
     of the service that also need updating; environment variables that need
     changing/adding; third-party services that need to be set up/updated
 
-## 4. Announce the release
+### 4. Announce the release
 
 Let the team know about the release. This is posted in Slack under `#ccs-data-submission`.
 Typical form is:
@@ -50,7 +57,7 @@ Typical form is:
 
 Acknowledgement is usually made by [`:mushroom:`](https://www.youtube.com/watch?v=6joOVjEemh4)
 
-## 5. Manually merge to master to release
+### 5. Manually merge to master to release
 
 Once the release pull request has been merged into the `develop` branch, the
 production deploy can be performed by manually merging `develop` into `master`:
@@ -65,12 +72,12 @@ production deploy can be performed by manually merging `develop` into `master`:
   git push
 ```
 
-## 6. Production smoke test
+### 6. Production smoke test
 
 Once the code has been deployed to production, carry out a quick smoke test to
 confirm that the changes have been successfully deployed.
 
-## 7. Update Trello
+### 7. Update Trello
 
 Update Trello to reflect the newly deployed cards.
 

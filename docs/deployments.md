@@ -8,9 +8,17 @@ Cloud Foundary scripts exist within each application in the /CF directory. These
 
 Migrations are manual.
 
-1. [get access to a rails console on the box](/docs/infrastructure)
+1. [get access to a rails console on the box](infrastructure.md)
 1. run `bin/rails db:migrate`
 1. run `cf v3-zdt-restart ccs-rmi-api-staging` for these changes to take effect
+
+## CHANGELOG
+
+As outlined in the [DSD code management workflow guide], Release/* branches are protected now so we can no longer push directly to them. To avoid having to make another pull request just for CHANGELOG additions at the end, it’s may be more efficient to update it as we go in Feature/* branches.
+
+In CHANGELOG.md:
+  - document the change your feature contributes to the release in a bullet point form
+  - Make sure there’s a corresponding link to the diff at the bottom of the file
 
 ## Staging
 
@@ -19,30 +27,18 @@ pull request to the develop branch.
 
 ## Production
 
-As outlined in the [dxw development workflow guide], production deploys are
-done by manually merging `develop` into `master`. To give us a slightly more
-formal process around what gets deployed and when and also to give us
-visibility into the things that have been deployed, we additionally follow
-these steps when releasing to production:
+Having tested in staging, reviewed and merged the relevant Feature/* branches back into develop: 
 
-### 1. Create a release branch and make a pull request
+### 1. Create a Release/* branch
 
-  - Create a branch from `develop` for the release called `release-X` where X is the release
-    number
-  - Update [CHANGELOG.md](CHANGELOG.md) to:
-     - document the changes in this release in a bullet point form
-     - add a link to the diff at the bottom of the file
-  - Document the changes in the commit message as well
-  - `git push <your-branch-name>`, e.g. `git push release-45`
-  - Create a tag for the release in the format `release-X`
-  - Create a pull request for the release with content from the `CHANGELOG.md`
-  - Get that pull request reviewed and approved
+  - Create a branch from `develop` for the release called `Release/X` where X is the release number
+  - Test the release cut in the preprod environment.
 
-### 2. Review and merge the release pull request
-
-The pull request should be reviewed to confirm that the changes in the release
-are safe to ship and that CHANGELOG.md accurately reflects the changes
-included in the release.
+### 2. Create a tag for the release:
+```bash
+git tag -a release-xx -m "release-xx"
+git push origin --tags
+```
 
 ### 3. Confirm the release candidate and perform any prerequisites
 
@@ -52,37 +48,23 @@ included in the release.
     of the service that also need updating; environment variables that need
     changing/adding; third-party services that need to be set up/updated
 
-### 4. Announce the release
+### 4. Make a pull request to merge Release/* branch into master
 
-Let the team know about the release. This is posted in Slack under `#ccs-data-submission`.
-Typical form is:
+  - Get the pull request reviewed to confirm that the changes in the release
+are safe to ship and that CHANGELOG.md accurately reflects the changes
+included in the release.
 
-`@here :badger: Release N of <API/Service> going to production :badger:`
+### 5. Make a pull request to merge Release/* branch back into develop
 
-Acknowledgement is usually made by [`:mushroom:`](https://www.youtube.com/watch?v=6joOVjEemh4)
-
-### 5. Manually merge to master to release
-
-Once the release pull request has been merged into the `develop` branch, the
-production deploy can be performed by manually merging `develop` into `master`:
-
-```bash
-  git fetch
-  git checkout master
-  git pull
-  git merge origin/develop
-  # Edit the commit message to reference the release number
-  # e.g. "Release 43" or "merge origin/develop for release 43"
-  git push
-```
+  - Get the pull request reviewed and approved.
 
 ### 6. Production smoke test
 
 Once the code has been deployed to production, carry out a quick smoke test to
 confirm that the changes have been successfully deployed.
 
-### 7. Update Trello
+### 7. Update Jira
 
-Update Trello to reflect the newly deployed cards.
+Update Jira to reflect the newly deployed tickets.
 
-[dxw development workflow guide]:http://playbook.dxw.com/#/guides/development-workflow?id=deploying
+[DSD code management workflow guide]:https://crowncommercialservice.atlassian.net/wiki/spaces/DSD/pages/812122139/Code+management+workflow

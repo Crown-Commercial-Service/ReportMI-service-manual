@@ -161,3 +161,10 @@ bin/rails db:schema:load
 </br>
 
 <i><b><u>And with that, you should now have a fully functioning environment, all good to go. The next steps would be visit both front-end and back-end urls, to ensure they are working, and then to onboard yourself as a user, via logging into the back-end api admin app.</u></b></i>
+
+</br>
+</br>
+
+## <i>[OPTIONAL]</i> Add Routes to Service Vendor Allow Lists
+
+This final section is not always necessary, and so is an optional step unless you get errors when signing in to either of the front or back end of the system. The errors to typically expect, while different depending on which service and link visited, will summise down to the url you are visiting from in order to login (via Auth0 or Google Client) is not allowed. As a result, it would be a case of adding any newly created domains + hostname (e.g.: api.staging.rmi-paas.ai-cloud.uk, or, www.staging.rmi-paas.ai-cloud.uk, etc), inside either the [Auth0 CCS Dashboard](https://manage.auth0.com/dashboard/eu/reportmi/), or the CCS Google G Suite lists (ticket to Cabinet Office IT required).

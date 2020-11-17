@@ -8,5 +8,6 @@
 * [Validations](validations.md)
 * [Data Warehouse Export](data-warehouse-export.md)
 * [Decision Records](decision-records.md)
+* [Setup New Environments](new-environments.md)
 * [Infrastructure](infrastructure.md)
 * [Deployments](deployments.md)

@@ -49,7 +49,9 @@ cf env APP_NAME
 
 ## Change an environment variable
 
-We use [user provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to manage environment variables on the PaaS, this is different to the [default documentation](https://docs.cloud.service.gov.uk/deploying_apps.html#environment-variables). This decision was taken as TODO: fill out.
+Environment variables that are not secret can be edited in the manifest template (e.g [https://github.com/dxw/DataSubmissionServiceAPI/blob/develop/CF/manifest-template.yml](https://github.com/dxw/DataSubmissionServiceAPI/blob/develop/CF/manifest-template.yml)) or using the normal CF [tools](https://docs.cloud.service.gov.uk/deploying_apps.html#environment-variables).
+
+We use [user provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to manage environment variables which contain secrets and configuration for external services. This allows the configuration to be more easily shared between apps.
 
 ### Prerequisites
 

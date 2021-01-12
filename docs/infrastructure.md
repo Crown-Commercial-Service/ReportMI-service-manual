@@ -6,7 +6,7 @@ The Data Submission Service is hosted on [GOV.UK's Platform as a Service](https:
 
 ## Prerequisites
 
-1. GOV.UK PaaS account - dxw technical operations can create this account for you and you'll recieve an email
+1. GOV.UK PaaS account - the lead or senior developer can create this account for you and you'll recieve an email
 2. [install command line tools](https://docs.cloud.service.gov.uk/get_started.html#get-an-account) for shell access
 
 ## Get shell access on a box
@@ -49,22 +49,17 @@ cf env APP_NAME
 
 ## Change an environment variable
 
-We use [user provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to manage environment variables on the PaaS, this is different to the [default documentation](https://docs.cloud.service.gov.uk/deploying_apps.html#environment-variables). This decision was taken as TODO: fill out.
+We use [user provided services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to manage environment variables on the PaaS, this is different to the [default documentation](https://docs.cloud.service.gov.uk/deploying_apps.html#environment-variables). 
 
 ### Prerequisites
 
 #### Secrets
 
-Environment variables are managed through 2 files in 1Password:
-
-- DSS .env.cf.prod
-- DSS .env.cf.staging
-
-Both the frontend and the API have environment variables managed through the same file.
+Obtain the environment variable files. Ask a team mate for their location.
 
 #### Scripts
 
-The scripts that help us make these changes are found in the [frontend repository within the CF directory](https://github.com/dxw/DataSubmissionService/tree/develop/CF). You should have this repository and directory checked out to continue.
+The scripts that help us make these changes are found in the [frontend repository within the CF directory](https://github.com/Crown-Commercial-Service/DataSubmissionService/tree/develop/CF). You should have this repository and directory checked out to continue.
 
 #### JSON Parser
 
@@ -74,7 +69,7 @@ brew install jq
 
 ### Making a change
 
-1. Make a change to the file in 1Password
+1. Make a change to the environment variable file
 2. Copy the contents into a new local file `DataSubmissionService/CF/.env.cf.staging`
 3. Run the script to apply the changes `./create-user-services.sh -u <YOUR_PAAS_EMAIL_ADDRESS> -p <YOUR_PAAS_PASSWORD> -o ccs-report-management-info -s staging`
 

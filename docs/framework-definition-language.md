@@ -116,7 +116,7 @@ Field definitions MUST be in the same order as the Excel template.
 #### “Known” fields
 
 Fields which have a [known
-destination](https://github.com/dxw/DataSubmissionServiceAPI/blob/master/app/models/framework/definition/data_warehouse/known_fields.rb#L7)
+destination](https://github.com/Crown-Commercial-Service/DataSubmissionServiceAPI/blob/master/app/models/framework/definition/data_warehouse/known_fields.rb#L7)
 in the data warehouse are always of a type known to the data warehouse. For
 example, a `CustomerURN` is always an integer and it’s always validated against
 the list of Customer URNs. An `InvoiceDate` is always validated as a date, and

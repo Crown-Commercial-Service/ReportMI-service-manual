@@ -6,7 +6,7 @@ The Report Management Information System is hosted on Cloud Foundry, using the g
 
 Optionally, you may also need a [Domain](https://docs.cloud.service.gov.uk/deploying_services/configure_cdn/#configure-your-custom-domain-in-cloud-foundry) that you wish to use for routing your apps, in the new environment, is required. This may be an exisiting one, already setup in Cloud Foundry, or a brand new one. New ones must be setup and confirmed with CCS Tech Ops.
 
-As result you will first need both a GOV UK PaaS Account and the Cloud Foundry cli setup. See [Infrastructure](https://crown-commercial-service.github.io/ReportMI-service-manual/#/infrastructure?id=prerequisites) for more information.
+As result you will first need both a GOV UK PaaS Account and the Cloud Foundry cli v7 setup. See [Infrastructure](https://crown-commercial-service.github.io/ReportMI-service-manual/#/infrastructure?id=prerequisites) for more information. For the rolling deployment strategy and a successful push, cloud foundry cli v7 must be installed. This should also be the case in the travis yml file, where the deployment pipeline installs cloud foundry cli.
 
 Furthermore, a GPaaS user with admin priviliges is required when creating a new Space or Domain in Cloud Foundry.
 
@@ -147,7 +147,7 @@ cf update-service ccs-rmi-api-<SPACE> -c '{"enable_extensions":["pgcrypto","plpg
 
 Next, connect to both the App and Api applications. Connect by ssh, match the app's environment to yours, and finally run/load the database schema:
 ```bash
-cf v3-ssh <APPLICATION>
+cf ssh <APPLICATION>
 ```
 ```bash
 /tmp/lifecycle/shell

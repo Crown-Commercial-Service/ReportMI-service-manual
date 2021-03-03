@@ -10,7 +10,7 @@ Migrations are manual.
 
 1. [get access to a rails console on the box](infrastructure.md)
 1. run `bin/rails db:migrate`
-1. run `cf v3-zdt-restart ccs-rmi-api-staging` for these changes to take effect
+1. run `cf restart ccs-rmi-api-staging` for these changes to take effect
 
 ## CHANGELOG
 

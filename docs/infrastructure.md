@@ -24,7 +24,7 @@ $ cf target -s staging
 
 SSH onto an application running within that environment
 ```bash
-$ cf v3-ssh ccs-rmi-api-staging
+$ cf ssh ccs-rmi-api-staging
 ```
 
 Start a Rails console
@@ -43,7 +43,7 @@ For example you can view staging variables by:
 ```
 cf login -a api.london.cloud.service.gov.uk -u <YOUR_EMAIL_ADDRESS>
 cf target -s staging
-cf v3-apps
+cf apps
 cf env APP_NAME
 ```
 
@@ -76,19 +76,17 @@ brew install jq
 ### Verify the change
 
 ```
-cf v3-apps
-cf v3-env <APP_NAME>
+cf apps
+cf env <APP_NAME>
 ```
 
 ### Deploy the change
 
-Using V3 instead of the previous blue/green plugin allows us to execute deployments without any downtime to the user natively.
-
-ZDT = Zero downtime deploy
+Using rolling deployment strategy (flag: --strategy rolling) with CF Cli v7, (instead of the previous V3 and the blue/green plugin), allows us to execute deployments without any downtime to the user natively.
 
 ```
-cf v3-apps
-cf v3-zdt-restart <APP_NAME>
+cf apps
+cf restart <APP_NAME>
 ```
 
 ### Watch the deployment progress
@@ -96,16 +94,16 @@ cf v3-zdt-restart <APP_NAME>
 You should see the process count for the intended application change as new processes are spun up and handed over to. This can take a few minutes.
 
 ```
-watch cf v3-apps
+watch cf apps
 ```
 
 Once this is complete the containers should be running the new environment variables.
 
 ## Restart an application
 
-Redeploy an application from v3-apps with downtime
+Redeploy an application from apps with downtime
 
 ```
-cf v3-apps
+cf apps
 cf restage <APP_NAME>
 ```

@@ -66,6 +66,20 @@ forms:
           WiderPublicSector -> 1%
       }
 
+  The sector based management charge model can be combined with percentage of a value in a named field and varies by a value in a named field.
+
+      ManagementCharge sector_based {
+        CentralGovernment varies_by 'Lot Number', 'Transaction Type' {
+          '1', * -> 1.5%
+          '2', * -> 2.5% of 'Quantity'
+          }
+        WiderPublicSector varies_by 'Lot Number’, 'Transaction Type’ { 
+          '1', 'Direct’ -> 0.5%
+          '1', 'Transactional' -> 1% of 'Quantity'
+          '2', * -> 1.5%
+          }
+        }
+
 ## Lots
 
 Framework Definitions MUST include a list of lot numbers and descriptions

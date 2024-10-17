@@ -1,16 +1,8 @@
 # Release process
 
-The platform is currently hosted on the Government Platform as a Service (GPaaS).
-
-Cloud Foundary scripts exist within each application in the /CF directory. These scripts are responsible for infrastructure changes as a separate task.
-
 ## Migrations
 
-Migrations are manual.
-
-1. [get access to a rails console on the box](infrastructure.md)
-1. run `bin/rails db:migrate`
-1. run `cf restart ccs-rmi-api-staging` for these changes to take effect
+Migrations are manual. See [infrastructure access](infrastructure.md)
 
 ## CHANGELOG
 
@@ -32,7 +24,6 @@ Having tested in staging, reviewed and merged the relevant Feature/* branches ba
 ### 1. Create a Release/* branch
 
   - Create a branch from `develop` for the release called `Release/X` where X is the release number
-  - Test the release cut in the preprod environment.
 
 ### 2. Create a tag for the release:
 ```bash
@@ -54,16 +45,20 @@ git push origin --tags
 are safe to ship and that CHANGELOG.md accurately reflects the changes
 included in the release.
 
-### 5. Make a pull request to merge Release/* branch back into develop
+### 5. Deploy the master branch in Jenkins
 
-  - Get the pull request reviewed and approved.
+  - This is currently a separate step.
 
-### 6. Production smoke test
+### 6. Run any new migrations if required
+
+  - See guidance on manually running migrations
+
+### 7. Production smoke test
 
 Once the code has been deployed to production, carry out a quick smoke test to
 confirm that the changes have been successfully deployed.
 
-### 7. Update Jira
+### 8. Update Jira
 
 Update Jira to reflect the newly deployed tickets.
 

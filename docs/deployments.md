@@ -1,10 +1,6 @@
 # Release process
 
-## Migrations
-
-Migrations are manual. See [infrastructure access](infrastructure.md)
-
-## CHANGELOG
+## Update CHANGELOG
 
 As outlined in the [DSD code management workflow guide], Release/* branches are protected now so we can no longer push directly to them. To avoid having to make another pull request just for CHANGELOG additions at the end, it’s may be more efficient to update it as we go in Feature/* branches.
 
@@ -12,12 +8,12 @@ In CHANGELOG.md:
   - document the change your feature contributes to the release in a bullet point form
   - Make sure there’s a corresponding link to the diff at the bottom of the file
 
-## Staging
+## Prepare release notes
 
-Deployments to staging are automatic when new changes are pushed via
-pull request to the develop branch.
+- Create [release versions](https://crowncommercialservice.atlassian.net/projects/NRMI?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=no-filter) for API and Frontend.
+- Add the appropriate 'Fix versions' to all relevant tickets. 
 
-## Production
+## Deploy to production
 
 Having tested in staging, reviewed and merged the relevant Feature/* branches back into develop: 
 
@@ -47,19 +43,22 @@ included in the release.
 
 ### 5. Deploy the master branch in Jenkins
 
-  - This is currently a separate step.
+  - Trigger the build and deploy pipeline in jenkins through 'Build with parameters':
+    - [API](https://jenkins.ai-cloud.uk/job/rmi/job/build-and-deploy-pipeline/job/build-and-deploy-pipeline-api/)
+    - [Frontend](https://jenkins.ai-cloud.uk/job/rmi/job/build-and-deploy-pipeline/job/build-and-deploy-pipeline-frontend/)
 
 ### 6. Run any new migrations if required
 
-  - See guidance on manually running migrations
+  - See [guidance](infrastructure.md) on manually running migrations 
 
 ### 7. Production smoke test
 
 Once the code has been deployed to production, carry out a quick smoke test to
 confirm that the changes have been successfully deployed.
 
-### 8. Update Jira
+### 8. Create release notes
 
-Update Jira to reflect the newly deployed tickets.
+- Release the new [release versions](https://crowncommercialservice.atlassian.net/projects/NRMI?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=no-filter), and automatically generate release notes. Make sure they sit in the correct [confluence space](https://crowncommercialservice.atlassian.net/wiki/spaces/CSD/pages/4589879338/RMI+Release+Notes).
+- General guidance [here](https://crowncommercialservice.atlassian.net/wiki/spaces/CSD/pages/4591386644/Release+Notes).
 
 [DSD code management workflow guide]:https://crowncommercialservice.atlassian.net/wiki/spaces/DSD/pages/812122139/Code+management+workflow
